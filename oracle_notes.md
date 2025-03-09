@@ -2,20 +2,6 @@
   `sudo docker ps`
   `sqlplus system/oralce_pass@//localhost:1521/XE`
 
-- `ALTER TABLE Student DROP COLUMN Grade;`
-- `ALTER TABLE Student ADD Age number(3);`
-
-- `DROP TABLE Student`		# Permanently delete the specific table
-
-✔ Use TRUNCATE TABLE when you need to clear data quickly but keep the table structure.
-✔ Use DROP TABLE when you want to remove the table completely.
-
-
-alter table enrollement
-add constraint student_id_fk foreign key(student_id) references student(student_id)
-
-
-
 
 - `CREATE TABLE customer(`
   `cust_id number(10),`
@@ -38,6 +24,10 @@ add constraint student_id_fk foreign key(student_id) references student(student_
 - `UPDATE customer SET cust_mobile_str = TO_CHAR(cust_mobile_no);  -- Step 2: Copy data`
 - `ALTER TABLE customer DROP COLUMN cust_mobile_no;  -- Step 3: Remove old column`
 - `ALTER TABLE customer RENAME COLUMN cust_mobile_str TO cust_mobile_no;  -- Step 4: Rename column`
+
+UPDATE customer
+SET cust_dob = TO_DATE('15-05-1998', 'DD-MM-YYYY')
+WHERE cust_id = 1002;
 
 
 
